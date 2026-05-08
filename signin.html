@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #f4f7fa;
+    }
+    .img-fluid{
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+    .img-fluid img{
+        font-size: 16px;
+    }
+    .card-body{
+        margin-top: 120px;
+        margin-left: 60px;
+        display: flex;
+        gap: 20em;
+        font-family: 'Poppins' sans-serif;
+    }
+    .left-page{
+        display: inline;
+        padding: 10px;
+        font-family: 'Poppins' sans-serif;
+    }
+    .left-page h3{
+        font-size: 48px;
+        color: #0a2e65;
+    
+
+    }
+    .left-page h5{
+        font-size: 25px;
+        color: #b7c3d3;
+        font-weight: 700;
+    }
+    .left-page span{
+        font-size: 16px;
+        color:#8094b0 ;
+        font-weight: 400;
+
+    }
+    .left-page span a{
+        text-decoration: none;
+        color:#0468f5 ;
+        font-weight: 700;
+    }
+    .font-tag{
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 15px;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 60px;
+        width: 100%;
+        max-width: 33em;
+       
+    }
+    .button{
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        display: flex;
+        justify-content:space-between ;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .google{
+        width: 50%;
+        padding: 5px;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        
+    }
+    .google img{
+        justify-content: center;
+        
+    }
+    .google span{
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        align-items: center;
+        color: #0a2e65;
+    }
+    .apple{
+        width: 50%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+       
+       
+    }
+    .apple img{
+         justify-content: center;
+        padding-top: 5px;
+    }
+    .apple span{
+          font-size: 16px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        justify-content: center;
+        align-items: center;
+        color: #0a2e65;
+    }
+    .text-divider{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+         padding: 0px 40px;
+        
+    }
+    .text-divider hr{
+        width: 100%;
+        border: 1px solid #f3f4f7; 
+    }
+    .text-divider span{
+        color: #a0aec3;
+    }
+     :root{
+    --accent:#0b66ff;
+    --muted:#6c82a3;
+  }
+
+  .field {
+    position: relative;
+    margin: 18px 0;
+    padding-left: 20px;
+    width: 450px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 14px 12px;
+    padding-top: 18px; 
+    border: 1px solid #e6e9ef;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    background: #fff;
+  }
+
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 6px 18px rgba(11,102,255,0.08);
+  }
+
+  .field .legend {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: transform .15s ease, font-size .15s ease, top .15s ease, color .15s;
+    background-color: #ffffff;
+    padding: 0 6px;
+  }
+
+
+  .field input:focus + .legend,
+  .field input:not(:placeholder-shown) + .legend {
+    top: -8px;
+    transform: none;
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  
+  .field.filled .legend {
+    top: -8px;
+    transform: none;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .field-set{
+     position: relative;
+    margin: 18px 0;
+    padding-left: 20px;
+    width: 450px;
+  }
+  .field-set input{
+    width: 100%;
+    padding: 14px 12px;
+    padding-top: 18px; /* leave room for the floating label */
+    border: 1px solid #e6e9ef;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    background: #fff;
+  }
+  .field-set input:focus{
+        border-color: var(--accent);
+    box-shadow: 0 6px 18px rgba(11,102,255,0.08);
+  }
+  .field-set .legend-page{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: transform .15s ease, font-size .15s ease, top .15s ease, color .15s;
+    background-color: #ffffff;
+    padding: 0 6px;
+  }
+  .field-set input:focus + .legend-page,
+  .field-set input:not(:placeholder-shown) + .legend-page {
+    top: -8px;
+    transform: none;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .field-set.filled .legend-page {
+    top: -8px;
+    transform: none;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  
+   .forget a{
+    text-decoration: none;
+    font-family:'rency' sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e78f6;
+    margin-left: 30px;
+   }
+   .brn-check{
+    width: 100%;
+    font-family: 'rency'poppins,sans-serif;
+    
+   }
+   .btn-check button{
+    width: 85%;
+    padding: 12px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color:#0066f5 ;
+    color:#fff ;
+    border: 1px #0066f5;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+   }
+    .progress {
+        position: absolute;
+        top: 700px;
+    }
+    .progress span{
+        color: #7c8fae;
+    }
+    .progress a{
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        color: #0066f5;
+    }
+    .header{
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        top: 700px;
+        right: 40px;
+    }
+    .header p{
+        color: #7c8fae;
+    }
+    /* .lead{
+        margin: 10px;
+        width: 5%;
+        height: 0.1%;
+        border-radius: 50%;
+        object-fit: cover;
+        display: flex;
+        position: absolute;
+        top: 700px;
+        right: 5%;
+    }
+      .lead img{
+        transform: ;
+      } */
+
+
+/* responsiveness design */
+
+/* Small screens (Mobile) - 320px to 480px */
+@media (max-width: 480px) { 
+    .img-fluid {
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+    
+    .card-body {
+        flex-direction: column;
+        margin-top: 40px !important;
+        margin-left: 20px !important;
+        gap: 20px !important;
+    }
+    
+    .left-page h3 {
+        font-size: 28px;
+    }
+    
+    .left-page h5 {
+        font-size: 16px;
+    }
+    
+    .left-page span {
+        font-size: 14px;
+    }
+    
+    .font-tag {
+        padding: 20px 15px 40px 15px;
+        max-width: 100%;
+        width: 90vw;
+    }
+    
+    .button {
+        flex-direction: column;
+        margin: 20px 0;
+        gap: 10px;
+    }
+    
+    .google, .apple {
+        width: 100%;
+        padding: 10px 5px;
+    }
+    
+    .google img, .apple img {
+        width: 16px;
+        height: auto;
+    }
+    
+    .google span, .apple span {
+        font-size: 14px;
+    }
+    
+    .field, .field-set {
+        width: 100%;
+        padding-left: 15px;
+    }
+    
+    .text-divider {
+        padding: 0 15px;
+    }
+    
+    .forget a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+    
+    .btn-check button {
+        width: 90%;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .progress {
+        top: auto;
+        margin-top: 20px;
+        margin-left: 15px;
+        font-size: 12px;
+    }
+    
+    .progress a {
+        font-size: 12px;
+    }
+    
+    .header {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 10px;
+        margin-left: 15px;
+        font-size: 12px;
+    }
+}
+
+/* Medium screens (Tablet) - 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .img-fluid {
+        margin-top: 80px;
+        margin-left: 30px;
+    }
+    
+    .card-body {
+        margin-left: 30px;
+        gap: 15em;
+    }
+    
+    .left-page h3 {
+        font-size: 36px;
+    }
+    
+    .left-page h5 {
+        font-size: 20px;
+    }
+    
+    .font-tag {
+        max-width: 28em;
+        padding: 20px;
+    }
+    
+    .field, .field-set {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .button {
+        margin: 20px 0;
+        gap: 15px;
+    }
+}
+
+/* Large screens (Desktop) - 769px and above */
+@media (min-width: 769px) {
+    .img-fluid {
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+    
+    .card-body {
+        margin-top: 120px;
+        margin-left: 60px;
+        gap: 20em;
+    }
+    
+    .left-page h3 {
+        font-size: 48px;
+    }
+    
+    .left-page h5 {
+        font-size: 25px;
+    }
+    
+    .font-tag {
+        max-width: 33em;
+        padding: 20px;
+    }
+    
+    .field, .field-set {
+        width: 450px;
+    }
+    
+    .btn-check button {
+        width: 85%;
+    }
+}
+    
+    
+    
+   
+</style>
+<body>
+    
+    <div class="img-fluid">
+        <img src="/My Cowrywise _ Log In/download (2).svg" alt="">
+    </div>
+    <div class=" card-body">
+        <div class=" left-page">
+            <h3>Jump right in</h3>
+            <h5>Sign in to continue</h5>
+            <span>New user? <a href="/signup.html">Create account</a></span>
+        </div>
+        <div class="font-tag">
+          <form action="">
+            <div class="button">
+            <button class="google">
+                <img src="/My Cowrywise _ Log In/download (6).svg" alt="google logo">
+                <span>Sign in with Google</span>
+            </button>
+            <button class="apple"> 
+                <img src="/My Cowrywise _ Log In/download (9).svg" alt="">
+                <span>Sign in with Apple</span>
+            </button>
+            </div>
+            <div class="text-divider">
+                <hr class="first">
+                <span>or</span>
+                <hr class="shadow">
+            </div>
+            <div class="field">
+           <input id="email1" type="email" placeholder=" " aria-label="Email Address" />
+          <span class="legend">Email Address</span>
+        </div>
+           
+            <div class="field-set">
+                <input type="password" placeholder=" " aria-label="Password">
+                <span class="legend-page">Password</span>
+            </div>
+            <div class="forget">
+                <a href="#">Forget password ?</a>
+            </div>
+            <div class=" btn-check">
+                <button>Sign in</button>
+            </div>
+          </form>
+          <div class="progress">
+         <span>Trouble sign in? <a href="#">Chat with us </a></span>
+         
+         </div>
+         <div class="header">
+            <p>Privacy</p>
+         <p>|</p>
+         <p>Term</p>
+         </div>
+        </div>
+        
+       </div>
+       <!-- <div class="img-tag">
+        <img src="/My Cowrywise _ Log In/imgi_1_a5971d1b1fbb04e757204fbf07553916.png" alt="logo" class="lead">
+       </div> -->
+            
+    <script>
+  
+  document.querySelectorAll('.field input').forEach(input=>{
+    const parent = input.parentElement;
+    function toggle(){
+      if(input.value.trim() !== '') parent.classList.add('filled');
+      else parent.classList.remove('filled');
+    }
+    input.addEventListener('input', toggle);
+    // initialize
+    toggle();
+  });
+</script>
+</body>
+</html>

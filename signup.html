@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Page</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color:#f4f7fa ;
+        font-family: 'Rency'sans-serif;
+    }
+    .icon-link{
+        margin-top: 100px;
+        margin-left: 30px;
+
+    }
+    .icon-link img{
+        font-size: 18px;
+        font-weight: 500;
+        
+    }
+    .caption-top{
+        display: flex;
+        gap: 10em;
+    }
+    .card{
+        width: 100%;
+        max-width: 80em;
+        height: 100%;
+        max-height: 600px;
+        border: 1px solid #fff;
+        margin-top: 100px;
+        padding-top: 30px;
+        margin-left: 80px;
+        padding-bottom: 600px;
+        
+        
+    }
+    .card-group{
+        background-color: #fff;
+
+
+    }
+    .card-group h3{
+        justify-content: center;
+        font-size: 64px;
+        padding-left: 50px;
+        color: #0a2e65;
+        font-weight: 600;
+        letter-spacing: -2.9px;
+    }
+    
+     .carousel{
+        width: 100%;
+        max-width: 30em;
+        height: 100%;
+        border: 1px  #ccc;
+        margin-top:150px ;
+        padding-right: 30px;
+     }
+     .carousel h5{
+        font-size: 24px;
+        font-weight: 600;
+        margin-left: 5px;
+        margin-top: 0px;
+        margin-right: 110px;
+        letter-spacing: -0.5px;
+        color: #0a2e65;
+        padding: 5px;
+        padding-left: 0px;
+     }
+     .carousel p{
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 0px;
+        margin-right: 155px;
+        color:#899bb6;
+     }
+     .carousel h3{
+        font-size: 16px ;
+        font-weight: 600;
+        color: #0a2e65;
+     }
+     .carousel a{
+        width: 30px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #277df7;
+
+     }
+     .logo{
+        color: yellow;
+     }
+     .accordion{
+        padding-top: 20px; 
+        padding-left: 50px;
+        font-size: 16px;
+     }
+      .accordion span{
+        color: #91a1ba;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      .accordion span a{
+        color: #006df6;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .google{
+        border: 1px solid #ccc;
+        width:40% ; 
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 6px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+      }
+      .google a{
+        text-decoration: none;
+        padding-left: 10px; 
+        padding-right: 30px;
+        font-size: 16px;
+        color: #113469;
+        font-weight: 400;
+      }
+      .google img{
+        width: 20px;
+      }
+      .cloud{
+          display:flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+         padding: 0px 40px;
+      }
+      .cloud hr{
+         width: 100%;
+        border: 1px solid #ccc; 
+      }
+      .cloud span{
+         color: #ccc;
+      }
+      :root{
+    --accent:#0b66ff;
+    --muted:#6c82a3;
+  }
+
+  .field {
+    position: relative;
+    margin: 18px 0;
+    padding-left: 20px;
+    width: 500px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 14px 12px;
+    padding-top: 18px; 
+    border: 1px solid #e6e9ef;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    background: #fff;
+  }
+
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 6px 18px rgba(11,102,255,0.08);
+  }
+
+  .field .legend {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: transform .15s ease, font-size .15s ease, top .15s ease, color .15s;
+    background-color: #ffffff;
+    padding: 0 6px;
+  }
+
+
+  .field input:focus + .legend,
+  .field input:not(:placeholder-shown) + .legend {
+    top: -8px;
+    transform: none;
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  
+  .field.filled .legend {
+    top: -8px;
+    transform: none;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .indepent{
+   
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 80px;
+    
+  }
+  .card-header{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 40px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  .card-header button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border-color: #006df6;
+    background-color: #006df6;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .indepent span{
+    
+    margin-left: -60px;
+    color: #818fb1;
+  }
+  .indepent img{
+    width: 25px;
+  }
+  .indepent a{
+    text-decoration: none;
+  }
+  .background{
+    flex: 1;
+    text-align: justify;
+    position: absolute;
+    top: 400px;
+    right: 5px;
+    left: 750px;
+    margin-left: -100px;
+    margin-right: 10px;
+    
+}
+.background img{
+    max-width: 100%;
+    height: 100%;
+}
+/* Small screens (Mobile) - 320px to 480px */
+@media (max-width: 480px) {
+    .icon-link {
+        margin-top: 50px;
+        margin-left: 15px;
+    }
+    
+    .icon-link img {
+        font-size: 24px;
+        font-weight: 1000;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .caption-top {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .card {
+        max-width: 100%;
+        width: 90vw;
+        margin: 40px auto;
+        margin-left: 20px;
+        padding: 20px 15px;
+        padding-bottom: 200px;
+        border: none;
+    }
+    
+    .card-group h3 {
+        font-size: 28px;
+        padding-left: 0;
+        margin-right: 0;
+        letter-spacing: -1px;
+    }
+    
+    .card-group span {
+        font-size: 14px;
+    }
+    
+    .card-group span a {
+        font-size: 14px;
+    }
+    
+    .field {
+        width: 100%;
+        padding-left: 15px;
+        max-width: 100%;
+    }
+    
+    .field input {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+    
+    .google {
+        width: 100%;
+        margin: 20px auto;
+        margin-left: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .google a {
+        font-size: 14px;
+        padding-left: 8px;
+    }
+    
+    .google img {
+        width: 16px;
+    }
+    
+    .cloud {
+        margin: 20px 0;
+        padding: 0 15px;
+    }
+    
+    .cloud hr {
+        border: 1px solid #e6e9ef;
+    }
+    
+    .card-header {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+        background-color: #fff;
+    }
+    
+    .card-header button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .indepent {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+        padding: 20px 15px;
+        gap: 10px;
+    }
+    
+    .indepent span {
+        margin-left: 0;
+        font-size: 12px;
+    }
+    
+    .indepent img {
+        width: 20px;
+    }
+    
+    .indepent a {
+        font-size: 12px;
+    }
+    
+    .carousel {
+        margin-top: 20px;
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .carousel h5 {
+        display: none;
+    }
+    
+    .carousel p {
+        font-size: 14px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .carousel a {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .background {
+        display: none;
+    }
+}
+
+/* Medium screens (Tablet) - 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .icon-link {
+        margin-top: 70px;
+        margin-left: 30px;
+    }
+    
+    .caption-top {
+        gap: 5em;
+    }
+    
+    .card {
+        max-width: 60%;
+        margin-left: 30px;
+        padding: 25px;
+        padding-bottom: 400px;
+    }
+    
+    .card-group h3 {
+        font-size: 40px;
+        padding-left: 20px;
+        margin-right: 0;
+    }
+    
+    .field {
+        width: 100%;
+        max-width: 400px;
+        padding-left: 20px;
+    }
+    
+    .google {
+        width: 60%;
+        margin-left: 20px;
+        padding: 8px;
+        margin-bottom: 80px;
+    }
+    
+    .card-header {
+        padding: 20px;
+        padding-left: 20px;
+    }
+    
+    .card-header button {
+        width: 90%;
+    }
+    
+    .carousel {
+        width: 100%;
+        max-width: 25em;
+        margin-top: 80px;
+        padding-right: 20px;
+    }
+    
+    .carousel h5 {
+        display: block;
+        font-size: 20px;
+    }
+    
+    .carousel p {
+        font-size: 14px;
+        margin-right: 80px;
+    }
+    
+    .background {
+        display: none;
+    }
+}
+
+/* Large screens (Desktop) - 769px and above */
+@media (min-width: 769px) {
+    .icon-link {
+        margin-top: 100px;
+        margin-left: 30px;
+    }
+    
+    .caption-top {
+        gap: 10em;
+    }
+    
+    .card {
+        max-width: 80em;
+        margin-left: 80px;
+        padding-top: 30px;
+        padding-bottom: 600px;
+    }
+    
+    .card-group h3 {
+        font-size: 64px;
+        padding-left: 50px;
+        letter-spacing: -2.9px;
+    }
+    
+    .field {
+        width: 500px;
+        padding-left: 20px;
+    }
+    
+    .google {
+        width: 40%;
+        margin-left: 50px;
+        padding: 6px;
+        padding-bottom: 15px;
+    }
+    
+    .card-header {
+        padding-left: 20px;
+        padding-right: 40px;
+    }
+    
+    .card-header button {
+        width: 100%;
+    }
+    
+    .carousel {
+        width: 100%;
+        max-width: 30em;
+        margin-top: 150px;
+        padding-right: 30px;
+    }
+    
+    .carousel h5 {
+        display: block;
+        font-size: 24px;
+        margin-right: 110px;
+    }
+    
+    .carousel p {
+        font-size: 16px;
+        margin-right: 155px;
+    }
+    
+    .background {
+        display: flex;
+    }
+    
+    .indepent {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 80px;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .indepent span {
+        margin-left: -60px;
+        color: #818fb1;
+        font-size: 16px;
+    }
+    
+    .indepent img {
+        width: 25px;
+    }
+    
+    .indepent a {
+        text-decoration: none;
+    }
+}
+</style>
+<body>
+    <div class="icon-link">
+       <img src="/Sign Up _ Cowrywise/download (2).svg" alt="logo"> 
+    </div>
+    <div class="caption-top">
+        <div class="card">
+        <div class="card-group">
+        <h3>Start your
+        investment journey
+        </h3>
+        <div class="accordion">
+           <span> Got an account? <a href="/signin.html">Sign in</a></span>
+        </div>
+        </div>
+        <div class="google">
+            <a href="">
+                <img src="/Sign Up _ Cowrywise/download (4).svg" alt="">
+                Sign in with Google
+            </a>
+        </div>
+        <div class="cloud">
+            <hr>
+            <span>or</span>
+            <hr>
+        </div>
+          <div class="field">
+           <input id="email1" type="email" placeholder=" " aria-label="Email Address" />
+          <span class="legend">Email Address</span>
+        </div>
+          <div class="card-header">
+                <button>Continue</button>
+            </div>
+        </div>
+        <div class="carousel">
+          <div>
+            <h5>Don’t wait to start</h5>
+            <p>See how much you could have earned in the past few years</p>
+             <a href="#">
+                <img src="/Sign Up _ Cowrywise/download (7).svg" alt="" class=" logo">
+                See what you miss 
+                <img src="/Sign Up _ Cowrywise/download (9).svg" alt="" class=" design">
+             </a>
+          </div>
+          <div class="background">
+            <img src="/Sign Up _ Cowrywise/imgi_13_auth-bg.svg" alt="">
+          </div>
+          
+        </div>
+    </div>
+    <div class="indepent">
+                <img src="/Sign Up _ Cowrywise/imgi_1_sec-logo.uViKvy1J.png" alt="logo">
+                <span>Cowrywise is licensed by the SEC</span>
+                <a href="#">Need Help?</a>
+            </div>
+    
+    
+     <script>
+  
+  document.querySelectorAll('.field input').forEach(input=>{
+    const parent = input.parentElement;
+    function toggle(){
+      if(input.value.trim() !== '') parent.classList.add('filled');
+      else parent.classList.remove('filled');
+    }
+    input.addEventListener('input', toggle);
+    // initialize
+    toggle();
+  });
+</script>
+    
+    
+</body>
+</html>
